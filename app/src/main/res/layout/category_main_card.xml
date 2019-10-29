@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="category"
+            type="com.travelling.datasource.entity.Category" />
+        <variable
+            name="handler"
+            type="com.travelling.ui.category.CategoryMainFragment.CategoryMainHandler" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:onClick="@{view -> handler.navToCategory(view, category)}"
+                android:tint="@color/imageViewTint"
+                android:scaleType="centerCrop"
+                android:id="@+id/categoryImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:textColor="@color/text"
+                android:textSize="50sp"
+                android:id="@+id/categoryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{category.name}"
+                app:layout_constraintBottom_toBottomOf="@+id/categoryImage"
+                app:layout_constraintEnd_toEndOf="@+id/categoryImage"
+                app:layout_constraintStart_toStartOf="@+id/categoryImage"
+                app:layout_constraintTop_toTopOf="@+id/categoryImage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

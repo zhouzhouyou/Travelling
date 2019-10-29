@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.travelling.ui.articles.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/recycler_view" />
+
+    <fragment
+        android:id="@+id/nav_article"
+        android:name="com.travelling.ui.ArticleFragment"
+        android:label="@string/article"
+        tools:layout="@layout/fragment_article"/>
+
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:label="@string/favorite"
+        android:name="com.travelling.ui.articles.FavoriteFragment"
+        tools:layout="@layout/recycler_view"/>
+
+    <fragment
+        android:id="@id/nav_bookmark"
+        android:label="@string/bookmark"
+        android:name="com.travelling.ui.articles.BookMarkFragment"
+        tools:layout="@layout/recycler_view"/>
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.travelling.ui.authentication.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_register_navigation"
+            app:destination="@id/register_navigation" />
+    </fragment>
+    <navigation
+        android:id="@+id/register_navigation"
+        app:startDestination="@id/nav_enterUserProfile" >
+        <fragment
+            android:id="@+id/nav_enterUserProfile"
+            android:name="com.travelling.ui.authentication.EnterUserProfileFragment"
+            android:label="@string/enter_user_profile"
+            tools:layout="@layout/enter_user_profile_fragment" />
+        <fragment
+            android:id="@+id/nav_chooseUserPassword"
+            android:name="com.travelling.ui.authentication.ChooseUserPasswordFragment"
+            android:label="@string/choose_user_password"
+            tools:layout="@layout/choose_user_password_fragment" />
+    </navigation>
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.travelling.ui.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/nav_explore_main"
+        android:name="com.travelling.ui.ExploreMainFragment"
+        android:label="Explore"
+        tools:layout="@layout/recycler_view" />
+    <fragment
+        android:id="@+id/nav_explore"
+        android:name="com.travelling.ui.ExploreFragment"
+        android:label="Explore"
+        tools:layout="@layout/fragment_explore"/>
+    <fragment
+        android:id="@+id/nav_category_main"
+        android:name="com.travelling.ui.category.CategoryMainFragment"
+        android:label="@string/category"
+        tools:layout="@layout/recycler_view"/>
+    <fragment
+        android:id="@+id/nav_category"
+        android:name="com.travelling.ui.category.CategoryFragment"
+        android:label="@string/category"
+        tools:layout="@layout/category_main_card"/>
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.travelling.ui.SearchResultFragment"
+        android:label="@string/search"
+        tools:layout="@layout/recycler_view"/>
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.travelling.ui.SettingFragment"
+        android:label="@string/action_settings" />
+
+</navigation>
