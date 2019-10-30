@@ -100,10 +100,10 @@ public class ArticleAsyncTasks {
         }
     }
 
-    public static class queryArticesTask extends AsyncTask<String, Void, LiveData<List<Article>>> {
+    public static class queryArticlesTask extends AsyncTask<String, Void, LiveData<List<Article>>> {
         private ArticleDao mArticleDao;
 
-        public queryArticesTask(ArticleDao articleDao) {
+        public queryArticlesTask(ArticleDao articleDao) {
             mArticleDao = articleDao;
         }
 

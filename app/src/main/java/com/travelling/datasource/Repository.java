@@ -138,7 +138,7 @@ public class Repository {
 
     public LiveData<List<Article>> queryArticles(String query) {
         try {
-            return new ArticleAsyncTasks.queryArticesTask(mArticleDao).execute(query).get();
+            return new ArticleAsyncTasks.queryArticlesTask(mArticleDao).execute(query).get();
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
